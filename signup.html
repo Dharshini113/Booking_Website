@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>fws javascript</title>
+<link rel="stylesheet" href="sample2.css">
+<script>
+function validate() {
+var name = document.forms["Review Form"]["name"].value;
+var mail = document.forms["Review Form"]["mail"].value;
+if (name == "" || mail == "")
+alert("Please enter your Name and E Mail ID.");
+else {
+var name1 = name.split(" ");
+var n = name1.length;
+for (i = 0; i < n; i++)
+if (name1[i].length <= 1)
+alert("Name should not contain single characters.");
+else {
+var mail1 = mail.split("@");
+if (mail1[0].length <= 10)
+alert("Mail Id should have more than 10 characters.")
+else
+alert(name + " with " + mail + " was successfully signed in.");
+}}}
+</script>
+</head>
+<body>
+	<div class="signup-container">
+	<center>
+			<form name="Review Form" action="index.html" method="get">
+				<label>Name:</label><input type="text" name="name"><br>
+				<label>Email:</label><input type="text" name="mail"><br>
+				<input type="checkbox" checked>Remember Me<br>
+				<input type="button" value="signin" onclick="validate()">
+			</form>
+		</center>
+	</div>
+</body>
+</html>
